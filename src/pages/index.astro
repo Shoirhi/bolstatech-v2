@@ -1,20 +1,30 @@
 ---
-import '@/styles/globals.css'
-import { Button } from "@/components/ui/button"
+import "@/styles/globals.css";
+import { Button } from "@/components/ui/button";
+import { getCollection, getEntries } from "astro:content";
+
+const posts = await getCollection("posts");
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<div class="container">
-			<h1>Astro</h1>
-			<Button>Hello World</Button>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Astro</h1>
+      <Button>Hello World</Button>
+      {
+        posts.map((postEntry: any) => (
+          <li>
+            <p>{postEntry.data.title}</p>
+          </li>
+        ))
+      }
+    </div>
+  </body>
 </html>
