@@ -1,5 +1,6 @@
 ---
 import "@/styles/globals.css";
+import Header from "@/components/Header.astro"
 ---
 
 <html lang="ja">
@@ -13,8 +14,9 @@ import "@/styles/globals.css";
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
   </head>
-  <body>
-    <main>
+  <body class="flex flex-col min-h-dvh">
+    <Header />
+    <main class="flex-1">
       <slot />
     </main>
   </body>
