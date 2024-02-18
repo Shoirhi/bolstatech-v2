@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export const darkMode = ["class"];
-export const content = ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"];
+export const content = [
+  "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+];
 export const prefix = "";
 export const theme = {
   container: {
@@ -67,4 +69,7 @@ export const theme = {
     },
   },
 };
-export const plugins = [require("tailwindcss-animate")];
+export const plugins = [
+  require("tailwindcss-animate"),
+  require("@tailwindcss/typography"),
+];
