@@ -3,7 +3,7 @@ title: "Webアプリ「買い物」をリリース"
 pubDate: 2024-02-17
 modDate: 2024-02-18
 description: "webアプリ「買い物」をリリースしました。」"
-tags: ["リリース"]
+tags: ["release"]
 ---
 
 Webアプリ「買い物」をリリースしました。

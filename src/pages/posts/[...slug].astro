@@ -22,7 +22,7 @@ const { Content } = await post.render();
 <Layout>
   <div class="container">
     <div class="prose mx-auto">
-      <h1>{post.data.title}</h1>
+      <h1 class="mt-16">{post.data.title}</h1>
       <FormattedDate date={post.data.pubDate} />
       <Content />
     </div>
