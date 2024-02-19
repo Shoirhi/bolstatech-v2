@@ -22,6 +22,9 @@ export const theme = {
     },
   },
   extend: {
+    fontFamily: {
+      sans: ["Noto Sans JP Variable", "sans-serif"],
+    },
     colors: {
       border: "hsl(var(--border))",
       input: "hsl(var(--input))",
@@ -85,9 +88,11 @@ export const theme = {
             "letter-spacing": "0.04em",
             "line-height": 1.5,
             "font-size": rem(32),
+            "font-weight": "normal",
             "@media(min-width: 768px)": {
               "line-height": 1.4,
               "font-size": rem(36),
+              "font-weight": "500",
             },
           },
           h2: {
@@ -96,8 +101,10 @@ export const theme = {
             "letter-spacing": "0.04em",
             "line-height": 1.5,
             "font-size": rem(28),
+            "font-weight": "normal",
             "@media(min-width: 768px)": {
               "font-size": rem(32),
+              "font-weight": "500",
             },
           },
           h3: {
@@ -106,8 +113,10 @@ export const theme = {
             "letter-spacing": "0.04em",
             "line-height": 1.5,
             "font-size": rem(24),
+            "font-weight": "normal",
             "@media(min-width: 768px)": {
               "font-size": rem(28),
+              "font-weight": "500",
             },
           },
           h4: {
@@ -116,19 +125,23 @@ export const theme = {
             "letter-spacing": "0.04em",
             "line-height": 1.5,
             "font-size": rem(20),
+            "font-weight": "normal",
             "@media(min-width: 768px)": {
               "font-size": rem(24),
+              "font-weight": "500",
             },
           },
-          h4: {
+          h5: {
             "margin-top": rem(40),
             "margin-bottom": rem(16),
             "letter-spacing": "0.04em",
             "line-height": 1.7,
             "font-size": rem(16),
+            "font-weight": "normal",
             "@media(min-width: 768px)": {
               "line-height": 1.5,
               "font-size": rem(20),
+              "font-weight": "500",
             },
           },
           p: {
