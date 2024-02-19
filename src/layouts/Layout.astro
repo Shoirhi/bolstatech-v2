@@ -1,20 +1,61 @@
 ---
-import "@/styles/globals.css";
+import { SEO } from "astro-seo";
 import "@fontsource-variable/noto-sans-jp";
+import "@/styles/globals.css";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+
+const defaultTitle = "ボルスタテック";
+const defaultDescription =
+  "誰かの不便を、ちょっと便利にするプロダクトやサービスを作っていきたくて活動しています。";
+const defaultOgType = "website";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogType?: string;
+}
+
+const {
+  title,
+  description = defaultDescription,
+  ogType = defaultOgType,
+} = Astro.props;
 ---
 
 <html lang="ja">
   <head>
-    <meta charset="utf-8" />
+    <!-- <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta
       name="viewport"
       content="width=device-width,initial-scale=1.0,maximum-scale=1.0"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>Astro</title> -->
+    <SEO
+      title={title}
+      titleTemplate={`%s | ${defaultTitle}`}
+      titleDefault={defaultTitle}
+      description={description}
+      charset="utf-8"
+      openGraph={{
+        basic: {
+          title: title || defaultTitle,
+          type: ogType,
+          image: `${Astro.url.origin}/ogp.png`,
+        },
+      }}
+      extend={{
+        link: [
+          {
+            rel: "icon",
+            type: "image/svg+xml",
+            href: "/favicon.svg",
+          },
+        ],
+      }}
+    />
   </head>
   <body class="flex flex-col min-h-dvh">
     <Header />

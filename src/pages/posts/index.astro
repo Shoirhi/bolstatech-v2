@@ -8,10 +8,10 @@ const posts = (await getCollection("posts")).sort(
 );
 ---
 
-<Layout>
+<Layout title="投稿">
   <div class="container">
     <div class="prose mx-auto">
-      <h1 class="mt-16">投稿一覧</h1>
+      <h1 class="mt-16">投稿</h1>
       <ul>
         {
           posts.map((post) => (
