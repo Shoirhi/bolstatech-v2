@@ -1,9 +1,18 @@
+---
+import LogoDynamic from "@/components/LogoDynamic.astro";
+import { buttonVariants } from "@/components/ui/button";
+---
+
 <header>
   <div class="container py-4">
-    <div class="prose mx-auto">
-      <nav class="flex justify-center gap-4">
-        <a href="/">ホーム</a>
-        <a href="/posts">投稿</a>
+    <div class="max-w-prose mx-auto">
+      <nav class="flex justify-between items-center gap-4">
+        <a href="/" class="group">
+          <LogoDynamic />
+        </a>
+        <div class="flex justify-between gap-4">
+          <a href="/posts" class={buttonVariants({ variant: "link" })}>投稿</a>
+        </div>
       </nav>
     </div>
   </div>
