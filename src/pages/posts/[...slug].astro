@@ -2,6 +2,8 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
+import Breadcrumbs from "@/components/Breadcrumbs.astro";
+import BreadcrumbsItem from "@/components/BreadcrumbsItem.astro";
 
 export interface Props {
   post: CollectionEntry<"posts">;
@@ -22,6 +24,10 @@ const { Content } = await post.render();
 <Layout title={post.data.title}>
   <div class="container">
     <div class="prose mx-auto">
+      <Breadcrumbs>
+        <BreadcrumbsItem label="投稿" href="/posts"/>
+        <BreadcrumbsItem label={post.data.title} currentPage/>
+      </Breadcrumbs>
       <h1 class="mt-16">{post.data.title}</h1>
       <FormattedDate date={post.data.pubDate} />
       <Content />

@@ -1,0 +1,14 @@
+---
+import BreadcrumbsItem,  { type TypeBreadcrumbsItem } from "./BreadcrumbsItem.astro";
+
+interface Props {
+  children: TypeBreadcrumbsItem | TypeBreadcrumbsItem[];
+}
+---
+
+<nav aria-label="Breadcrumbs">
+  <ol class="flex flex-wrap list-none pl-0">
+    <BreadcrumbsItem label="ホーム" href="/" />
+    <slot />
+  </ol>
+</nav>
